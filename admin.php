@@ -157,6 +157,17 @@ echo '<div style="color:black" class="col-md-4">   <div class="card m-5" style="
 
 <br>';
 
+echo "<h3>Reviews</h3>";
+$sql="SELECT `ratings`,`review` FROM `rating` where `driver_id`=".$row['driver_id'];
+$result1 =$conn->query($sql);
+
+if($result->num_rows>0)//when db records are found store in associative array...
+  {
+while($row1= $result1->fetch_assoc()){
+ 
+  echo "<h6>".$row1['review']."</h6><br/>";
+}}
+
 echo '</div></div></div>';
 }
 echo "</div>";

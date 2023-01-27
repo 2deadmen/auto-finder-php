@@ -61,7 +61,7 @@ echo '<div style="color:black" class="row"> ';
   while($row = $result->fetch_assoc())
    {
     
-    $sql="SELECT `ratings` FROM `rating` where `driver_id`=".$row['driver_id'];
+    $sql="SELECT `ratings`,`review` FROM `rating` where `driver_id`=".$row['driver_id'];
     $result1 =$conn->query($sql);
     $count=0;
     $sum=0;
@@ -71,6 +71,7 @@ echo '<div style="color:black" class="row"> ';
     while($row1= $result1->fetch_assoc()){
       $sum+=$row1['ratings'];
       $count=$count+1;
+     
     }
   if($count>0){
     $star=$sum/$count;
@@ -102,6 +103,18 @@ echo '<form action="rate.php" method="post">
 <input name="id" value='.$row['driver_id'].' style="display:none">
 <input type="submit" name="submit" value="Rate this worker" class="btn-primary btn my-2">
 </form>';
+
+
+echo "<h3>Reviews</h3>";
+$sql="SELECT `ratings`,`review` FROM `rating` where `driver_id`=".$row['driver_id'];
+$result1 =$conn->query($sql);
+
+if($result->num_rows>0)//when db records are found store in associative array...
+  {
+while($row1= $result1->fetch_assoc()){
+ 
+  echo "<h6>".$row1['review']."</h6><br/>";
+}}
 
 echo '  
 </div></div>
