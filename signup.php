@@ -117,10 +117,19 @@
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="submit"  onclick='check()' class="signupbtn">Sign Up</button>
     </div>
   </div>
 </form>
+<script>
+  function check(){
+    if(document.getElementById('psw').value!==document.getElementById('psw-repeat').value){
+      
+      alert('passwords do not match')
+event.preventDefault()
+    }
+  }
+</script>
  <?php
  
 

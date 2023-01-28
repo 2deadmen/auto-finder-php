@@ -15,6 +15,15 @@
    </style>
 </head>
 <body>
+   <?php
+   session_start();
+
+   if (($_SESSION['user']!=='driver')) {
+      echo "<script language='javascript'>
+            
+           location.href='d_login.php';
+    </script>";	}
+   ?>
 <header>
         <a href="#" class="logo">BOOK MY<span> AUTO </span> </a>
 

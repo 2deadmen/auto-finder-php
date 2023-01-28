@@ -20,9 +20,9 @@
     <title>drivers</title>
 </head>
 <body>
-    <?php
-    session_start();
-    ?>
+<?php
+  require('session.php');
+  ?>
     <header style='background-color:#2a2a2a' class='fixed-top'>
         <h1 href="#" class="logo">BOOK MY<span> AUTO </span> </h1>
 

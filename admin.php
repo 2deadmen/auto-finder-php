@@ -17,6 +17,16 @@
 
 </head>
 <body>
+<?php
+session_start();
+
+if (($_SESSION['user']!=='admin')) {
+   echo "<script language='javascript'>
+			
+        location.href='admin_login.php';
+ </script>";	}
+
+?>
 <header style='background-color:#2a2a2a' class='fixed-top'>
         <h1 href="#" class="logo">BOOK MY<span> AUTO </span> </h1>
 
