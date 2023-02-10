@@ -57,7 +57,7 @@ if (($_SESSION['user']!=='admin')) {
         
 
     //total customers
-$sql1="SELECT * FROM `driver`";
+$sql1="SELECT * FROM `driver` where acnt='active'";
 $result = $conn->query($sql1);
 if($result->num_rows>0)//when db records are found store in associative array...
 {

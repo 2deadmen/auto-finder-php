@@ -43,7 +43,7 @@
     <h3 style='margin:10px'>status</h3>
 
     <?php
-    session_start();
+   
     $id=$_SESSION['id'];
     $conn=mysqli_connect("localhost","root","","auto_booking");
     $sql1="SELECT * FROM `driver` where `driver_id`='$id'";
